@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibbagamuwa Model M.V - Full Management System  by Aura iot </title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Sinhala:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root { --primary: #0f172a; --brand: #eab308; --accent: #3b82f6; --success: #22c55e; --danger: #ef4444; --bg: #f1f5f9; --sidebar-w: 260px; }
+        body { font-family: 'Inter', 'Noto Sans Sinhala', sans-serif; margin: 0; background: var(--bg); color: #334155; display: flex; height: 100vh; overflow: hidden; }
+        .hidden { display: none !important; }
+        .btn { padding: 10px 20px; border-radius: 8px; border: none; font-weight: 600; cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: var(--primary); color: white; } .btn-primary:hover { background: #1e293b; }
+        .btn-brand { background: var(--brand); color: #000; } .btn-brand:hover { opacity: 0.9; }
+        .btn-danger { background: var(--danger); color: white; }
+        .btn-success { background: var(--success); color: white; }
+        input, select { padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; width: 100%; box-sizing: border-box; outline: none; }
+        .sidebar { width: var(--sidebar-w); background: var(--primary); color: white; display: flex; flex-direction: column; flex-shrink: 0; }
+        .logo-area { padding: 25px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .nav-menu { flex: 1; padding: 20px 10px; overflow-y: auto; }
+        .nav-item { padding: 12px 15px; margin-bottom: 5px; color: #94a3b8; cursor: pointer; border-radius: 8px; display: flex; align-items: center; gap: 12px; font-size: 14px; transition: 0.2s; }
+        .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.1); color: white; }
+        .nav-item.active { border-left: 3px solid var(--brand); }
+        .nav-category { font-size: 11px; text-transform: uppercase; color: #64748b; margin: 15px 10px 5px; font-weight: 700; }
+        .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+        header { background: white; padding: 15px 30px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; }
+        .content { flex: 1; padding: 30px; overflow-y: auto; }
+        .card { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 20px; border-top: 4px solid var(--primary); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .stat-box { background: white; padding: 25px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .stat-icon { width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+        .table-container { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 14px; }
+        th { text-align: left; padding: 12px; background: #f8fafc; color: #64748b; font-weight: 600; border-bottom: 2px solid #e2e8f0; }
+        td { padding: 12px; border-bottom: 1px solid #e2e8f0; }
+        .grid-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 15px; }
+        #toast { position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 10px 15px rgba(0,0,0,0.2); transform: translateY(100px); transition: 0.3s; z-index: 9999; }
+        .badge-present { background: #dcfce7; color: #166534; padding: 5px 10px; border-radius: 20px; font-weight: bold; font-size: 12px; }
+        .badge-absent { background: #fee2e2; color: #991b1b; padding: 5px 10px; border-radius: 20px; font-weight: bold; font-size: 12px; }
+        @media print { .sidebar, header, .no-print { display: none; } .print-area { display: block !important; position: absolute; top: 0; left: 0; width: 100%; } }
+    </style>
+</head>
+<body>
+
+    <div id="toast">Operation Successful!</div>
+
+    <div class="sidebar">
+        <div class="logo-area">
+            <i class="fas fa-graduation-cap"></i>
+            <h2>IBBAGAMUWA MODEL M.V </h2>
+            <small style="color: var(--brand);"> Aura iot Smart ERP v4.0</small>
+        </div>
+        
+        <div class="nav-menu">
+            <div class="nav-category">Main</div>
+          <!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* බොත්තමේ හැඩය සහ පාට හදන CSS කේතය */
+  .my-custom-button {
+    background-color: #007BFF; /* පසුබිම් වර්ණය */
+    color: white; /* අකුරු වල වර්ණය */
+    padding: 12px 17px; /* ඇතුලත ඉඩ ප්‍රමාණය */
+    font-size: 8px; /* අකුරු වල ප්‍රමාණය */
+    text-decoration: none; /* ලින්ක් එකක් නිසා යටින් ඉරක් වැටෙන එක නැති කිරීම */
+    display: inline-block; /* බොත්තමක් වගේ හැඩය තියාගැනීම */
+    border-radius: 8px; /* කොන් රවුම් කිරීම */
+    font-family: Arial, sans-serif; /* අකුරු වල හැඩය */
+    transition: background-color 0.3s ease; /* පාට වෙනස් වන වේගය */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* පොඩි හෙවනැල්ලක් දැමීම */
+  }
+
+  /* මවුස් එක බොත්තම උඩට ගෙනිච්චම (Hover) වෙනස් වෙන විදිය */
+  .my-custom-button:hover {
+    background-color: #0056b3; 
+  }
+</style>
+</head>
+<body>
+
+  <a href="        https://aura2626705.github.io/IAMV-G-1/   "   class="my-custom-button" target="_blank">
+    ගුරු ලියපදිංචි II / සිසු වාර්තා
+  </a>
+
+</body>
+</html>
+          
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* බොත්තමේ හැඩය සහ පාට හදන CSS කේතය */
+  .my-custom-button {
+    background-color: #007BFF; /* පසුබිම් වර්ණය */
+    color: white; /* අකුරු වල වර්ණය */
+    padding: 10px 15px; /* ඇතුලත ඉඩ ප්‍රමාණය */
+    font-size: 7px; /* අකුරු වල ප්‍රමාණය */
+    text-decoration: none; /* ලින්ක් එකක් නිසා යටින් ඉරක් වැටෙන එක නැති කිරීම */
+    display: inline-block; /* බොත්තමක් වගේ හැඩය තියාගැනීම */
+    border-radius: 8px; /* කොන් රවුම් කිරීම */
+    font-family: Arial, sans-serif; /* අකුරු වල හැඩය */
+    transition: background-color 0.3s ease; /* පාට වෙනස් වන වේගය */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* පොඩි හෙවනැල්ලක් දැමීම */
+  }
+
+  /* මවුස් එක බොත්තම උඩට ගෙනිච්චම (Hover) වෙනස් වෙන විදිය */
+  .my-custom-button:hover {
+    background-color: #0056b3; 
+  }
+</style>
+</head>
+<body>
+
+  <a href="  https://codepen.io/Aura-10/full/LERbeme   " class="my-custom-button" target="_blank">
+    කාලටහන
+  </a>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* බොත්තමේ හැඩය සහ පාට හදන CSS කේතය */
+  .my-custom-button {
+    background-color: #077gg; /* පසුබිම් වර්ණය */
+    color: white; /* අකුරු වල වර්ණය */
+    padding: 12px 15px; /* ඇතුලත ඉඩ ප්‍රමාණය */
+    font-size: 8px; /* අකුරු වල ප්‍රමාණය */
+    text-decoration: none; /* ලින්ක් එකක් නිසා යටින් ඉරක් වැටෙන එක නැති කිරීම */
+    display: inline-block; /* බොත්තමක් වගේ හැඩය තියාගැනීම */
+    border-radius: px; /* කොන් රවුම් කිරීම */
+    font-family: Arial, sans-serif; /* අකුරු වල හැඩය */
+    transition: background-color 0.3s ease; /* පාට වෙනස් වන වේගය */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* පොඩි හෙවනැල්ලක් දැමීම */
+  }
+
+  /* මවුස් එක බොත්තම උඩට ගෙනිච්චම (Hover) වෙනස් වෙන විදිය */
+  .my-custom-button:hover {
+    background-color: #0056b3; 
+  }
+</style>
+</head>
+<body>
+
+  <a href="       https://codepen.io/Aura-10/full/LERbeme    " class="my-custom-button" target="_blank">
+    වාර්තා පොත
+  </a>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* බොත්තමේ හැඩය සහ පාට හදන CSS කේතය */
+  .my-custom-button {
+    background-color: #007BFF; /* පසුබිම් වර්ණය */
+    color: white; /* අකුරු වල වර්ණය */
+    padding: 12px 17px; /* ඇතුලත ඉඩ ප්‍රමාණය */
+    font-size: 8px; /* අකුරු වල ප්‍රමාණය */
+    text-decoration: none; /* ලින්ක් එකක් නිසා යටින් ඉරක් වැටෙන එක නැති කිරීම */
+    display: inline-block; /* බොත්තමක් වගේ හැඩය තියාගැනීම */
+    border-radius: 8px; /* කොන් රවුම් කිරීම */
+    font-family: Arial, sans-serif; /* අකුරු වල හැඩය */
+    transition: background-color 0.3s ease; /* පාට වෙනස් වන වේගය */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* පොඩි හෙවනැල්ලක් දැමීම */
+  }
+
+  /* මවුස් එක බොත්තම උඩට ගෙනිච්චම (Hover) වෙනස් වෙන විදිය */
+  .my-custom-button:hover {
+    background-color: #0156b3; 
+  }
+</style>
+</head>
+<body>
+
+  <a href="           https://aura2626705.github.io/IAMV-G2/
+   "   class="my-custom-button" target="_blank">
+   අස්වීම් ලිපි
+  </a>
+
+</body>
+</html>
+          <!DOCTYPE html>
+
+<html>
+
+<head>
+
+<style>
+
+  /* බොත්තමේ හැඩය සහ පාට හදන CSS කේතය */
+
+  .my-custom-button {
+
+    background-color: #008BFF; /* පසුබිම් වර්ණය */
+
+    color: black; /* අකුරු වල වර්ණය */
+
+    padding: 12px 17px; /* ඇතුලත ඉඩ ප්‍රමාණය */
+
+    font-size: 15px; /* අකුරු වල ප්‍රමාණය */
+
+    text-decoration: none; /* ලින්ක් එකක් නිසා යටින් ඉරක් වැටෙන එක නැති කිරීම */
+
+    display: inline-block; /* බොත්තමක් වගේ හැඩය තියාගැනීම */
+
+    border-radius: 20px; /* කොන් රවුම් කිරීම */
+
+    font-family: Arial, sans-serif; /* අකුරු වල හැඩය */
+
+    transition: background-color 1s ease; /* පාට වෙනස් වන වේගය */
+
+    box-shadow: 60px 20px rgba(0,0,0,0.1); /* පොඩි හෙවනැල්ලක් දැමීම */
+
+  }
+
+  /* මවුස් එක බොත්තම උඩට ගෙනිච්චම (Hover) වෙනස් වෙන විදිය */
+
+  .my-custom-button:hover {
+
+    background-color: #056b3; 
+
+  }
+
+</style>
+
+</head>
+
+<body>
+
+  <a href="     
+           https://aura2626705.github.io/Iamv-G44/
+           
+           "   class="my-custom-button" target="_blank">
+
+    සහන කාලජ්ජෙද
+ 
+
+  </a>
+
+</body>
+
+</html>
+          
+          
+          
+            <div class="nav-item active" onclick="nav('dashboard')"><i class="fas fa-chart-line"></i> Dashboard</div>
+            <div class="nav-item" onclick="nav('admin')"><i class="fas fa-user-tie"></i> Administration</div>
+            
+            <div class="nav-category">People</div>
+            <div class="nav-item" onclick="nav('students')"><i class="fas fa-user-graduate"></i> Students</div>
+            <div class="nav-item" onclick="nav('teachers')"><i class="fas fa-chalkboard-teacher"></i> Teachers (ගුරුවරු)</div>
+
+            <div class="nav-category">Academic</div>
+            <div class="nav-item" onclick="nav('attendance')"><i class="fas fa-calendar-check"></i> Attendance (නාම ලේඛනය)</div>
+            <div class="nav-item" onclick="nav('marks')"><i class="fas fa-edit"></i> Marks & Exams</div>
+            <div class="nav-item" onclick="nav('reports')"><i class="fas fa-print"></i> Report Cards</div>
+
+            <div class="nav-category">Management</div>
+            <div class="nav-item" onclick="nav('library')"><i class="fas fa-book"></i> Library</div>
+            <div class="nav-item" onclick="nav('discipline')"><i class="fas fa-gavel"></i> Discipline</div>
+            
+            <div class="nav-category">System</div>
+            <div class="nav-item" style="color: #fca5a5;" onclick="resetSystem()"><i class="fas fa-power-off"></i> Reset Data</div>
+        </div>
+        <div class="sidebar-footer">Powered by <strong> Aura iot
+          
+   </strong><br>011 3304820</div>
+    </div>
+
+    <div class="main">
+        <header>
+            <div class="header-title"><h1 id="page-title">Dashboard</h1></div>
+            <div class="header-info"><div class="clock" id="clock">12:00:00</div></div>
+        </header>
+
+        <div class="content">
+
+            <div id="dashboard" class="view-section">
+                <div class="stats-grid">
+                    <div class="stat-box"><div><h3 style="margin:0" id="dash-st-count">0</h3><small>Total Students</small></div><div class="stat-icon" style="background:#dbeafe; color:#3b82f6;"><i class="fas fa-user-graduate"></i></div></div>
+                    <div class="stat-box"><div><h3 style="margin:0" id="dash-tr-count">0</h3><small>Registered Teachers</small></div><div class="stat-icon" style="background:#fef3c7; color:#d97706;"><i class="fas fa-chalkboard-teacher"></i></div></div>
+                    <div class="stat-box"><div><h3 style="margin:0">Active</h3><small>System Status</small></div><div class="stat-icon" style="background:#dcfce7; color:#16a34a;"><i class="fas fa-server"></i></div></div>
+                </div>
+            </div>
+
+            <div id="students" class="view-section hidden">
+                <div class="card">
+                    <h3>Register New Student</h3>
+                    <div class="grid-form">
+                        <input type="text" id="reg-name" placeholder="Full Name">
+                        <input type="text" id="reg-id" placeholder="Index Number (e.g. 5001)">
+                        <select id="reg-grade"><option value="">Grade</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option></select>
+                        <select id="reg-cls"><option>A</option><option>B</option><option>C</option></select>
+                        <button class="btn btn-primary" onclick="addStudent()">Register</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Student Directory</h3>
+                    <div class="table-container"><table id="st-table"><thead><tr><th>Index</th><th>Name</th><th>Class</th><th>Action</th></tr></thead><tbody></tbody></table></div>
+                </div>
+            </div>
+
+            <div id="teachers" class="view-section hidden">
+                <div class="card">
+                    <h3>👨‍🏫 ගුරු ලියාපදිංචිය</h3>
+                    <div class="grid-form">
+                        <input type="text" id="tr-name" placeholder="Name">
+                        <input type="text" id="tr-id" placeholder="Staff ID">
+                        <input type="text" id="tr-sub" placeholder="Subject">
+                        <input type="text" id="tr-phone" placeholder="Phone">
+                        <button class="btn btn-success" onclick="addTeacher()">Register</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>ගුරු මණ්ඩලය</h3>
+                    <div class="table-container"><table id="tr-table"><thead><tr><th>ID</th><th>Name</th><th>Subject</th><th>Phone</th><th>Action</th></tr></thead><tbody></tbody></table></div>
+                </div>
+            </div>
+
+            <div id="attendance" class="view-section hidden">
+                <div class="card">
+                    <h3 style="color: var(--primary);">📝 පැමිණීම ලකුණු කිරීම (Mark Attendance)</h3>
+                    <div class="grid-form" style="align-items: end;">
+                        <div><label>Grade</label><select id="att-grade"><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option></select></div>
+                        <div><label>Class</label><select id="att-cls"><option>A</option><option>B</option><option>C</option></select></div>
+                        <div><label>Date</label><input type="date" id="att-date"></div>
+                        <button class="btn btn-primary" onclick="loadAttList()">Load Students</button>
+                    </div>
+                    
+                    <div id="att-sheet" class="hidden" style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px;">
+                        <div class="table-container">
+                            <table id="att-table-view">
+                                <thead><tr><th>Index</th><th>Name</th><th>Status</th></tr></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <button class="btn btn-success" style="margin-top: 15px;" onclick="saveAttendance()">Save Attendance</button>
+                    </div>
+                </div>
+
+                <div class="card" style="border-top: 4px solid var(--accent);">
+                    <h3 style="color: var(--accent);">🔍 පැමිණීමේ ඉතිහාසය බලන්න (View History)</h3>
+                    <p>පැමිණීම බැලීමට දිනය සහ පන්තිය තෝරන්න.</p>
+                    <div class="grid-form" style="align-items: end;">
+                        <div><label>Grade</label><select id="view-att-grade"><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option></select></div>
+                        <div><label>Class</label><select id="view-att-cls"><option>A</option><option>B</option><option>C</option></select></div>
+                        <div><label>Date</label><input type="date" id="view-att-date"></div>
+                        <button class="btn btn-brand" onclick="viewPastAttendance()">Search History</button>
+                    </div>
+
+                    <div id="history-view" class="hidden" style="margin-top: 20px;">
+                        <h4 id="hist-title"></h4>
+                        <div class="table-container">
+                            <table id="hist-table">
+                                <thead><tr><th>Index</th><th>Name</th><th>Status</th></tr></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="marks" class="view-section hidden">
+                <div class="card">
+                    <h3>Marks Entry</h3>
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <input type="text" id="mark-search-id" placeholder="Enter Student Index">
+                        <button class="btn btn-primary" onclick="loadMarksForm()">Load Student</button>
+                    </div>
+                    <div id="marks-container" class="hidden">
+                        <h4 id="mark-st-name" style="color: var(--primary);"></h4>
+                        <div class="grid-form" style="grid-template-columns: repeat(3, 1fr);">
+                            <input type="number" id="m1" placeholder="Religion"><input type="number" id="m2" placeholder="Sinhala"><input type="number" id="m3" placeholder="English">
+                            <input type="number" id="m4" placeholder="Maths"><input type="number" id="m5" placeholder="Science"><input type="number" id="m6" placeholder="History">
+                            <input type="number" id="m7" placeholder="Bucket 1"><input type="number" id="m8" placeholder="Bucket 2"><input type="number" id="m9" placeholder="Bucket 3">
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 10px;" onclick="saveMarks()">Save Marks</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="reports" class="view-section hidden">
+                <div class="card no-print">
+                    <h3>Print Report Card</h3>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" id="rep-id" placeholder="Index">
+                        <button class="btn btn-primary" onclick="generateReport()">Generate</button>
+                    </div>
+                </div>
+                <div id="print-view" class="hidden">
+                    <div style="border: 2px solid black; padding: 40px; background: white; max-width: 800px; margin: auto;">
+                        <h2 style="text-align: center;">IBBAGAMUWA MODEL MAHA VIDYALAYA</h2>
+                        <h3 style="text-align: center;">STUDENT REPORT CARD</h3>
+                        <div style="margin: 20px 0;"><strong>Name:</strong> <span id="r-name"></span> | <strong>Index:</strong> <span id="r-id"></span></div>
+                        <table style="width: 100%; border: 1px solid black; border-collapse: collapse;">
+                            <thead style="background: #eee;"><tr><th style="border:1px solid black;">Subject</th><th style="border:1px solid black;">Marks</th><th style="border:1px solid black;">Grade</th></tr></thead>
+                            <tbody id="r-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="btn btn-primary no-print" style="margin-top:20px;" onclick="window.print()">Print</button>
+                </div>
+            </div>
+
+            <div id="admin" class="view-section hidden">
+                <div class="card">
+                    <h3>Administration</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                        <div style="text-align: center; border: 1px solid #eee; padding: 20px; border-radius: 10px;">
+                            <h3 style="color:var(--primary);">කාන්ති කුමාරි මැතිනිය</h3><p style="font-weight:bold;">විදුහල්පති (Principal)</p>
+                        </div>
+                        <div style="text-align: center; border: 1px solid #eee; padding: 20px; border-radius: 10px;">
+                            <h3 style="color:var(--primary);">සුනන්ද චන්ද්‍රරත්න මහතා</h3><p style="font-weight:bold;">නියෝජ්‍ය විදුහල්පති</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="library" class="view-section hidden">
+                <div class="card"><h3>Library</h3><div class="grid-form"><input type="text" id="lib-st-id" placeholder="Student Index"><input type="text" id="lib-book" placeholder="Book"><select id="lib-act"><option>Issue</option><option>Return</option></select><button class="btn btn-brand" onclick="updLib()">Update</button></div></div>
+                <div class="card"><h3>Library Logs</h3><table id="lib-table"><thead><tr><th>Student</th><th>Book</th><th>Action</th><th>Date</th></tr></thead><tbody></tbody></table></div>
+            </div>
+
+            <div id="discipline" class="view-section hidden">
+                <div class="card"><h3>Discipline</h3><div class="grid-form"><input type="text" id="disc-id" placeholder="Index"><select id="disc-type"><option>Merit</option><option>Warning</option></select><input type="text" id="disc-desc" placeholder="Desc"><button class="btn btn-danger" onclick="addDisc()">Add</button></div></div>
+                <div class="card"><h3>Records</h3><table id="disc-table"><thead><tr><th>Index</th><th>Type</th><th>Desc</th></tr></thead><tbody></tbody></table></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // DB Init
+        let db = {
+            st: JSON.parse(localStorage.getItem('f_st')) || [],
+            tr: JSON.parse(localStorage.getItem('f_tr')) || [],
+            att: JSON.parse(localStorage.getItem('f_att')) || [],
+            mk: JSON.parse(localStorage.getItem('f_mk')) || {},
+            lib: JSON.parse(localStorage.getItem('f_lib')) || [],
+            disc: JSON.parse(localStorage.getItem('f_disc')) || []
+        };
+
+        // Navigation
+        function nav(id) {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+            document.getElementById('page-title').innerText = id.toUpperCase();
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            updateDash();
+        }
+        function showToast(msg) { let t=document.getElementById('toast'); t.innerText=msg; t.style.transform="translateY(0)"; setTimeout(()=>t.style.transform="translateY(100px)",3000); }
+
+        // Students
+        function addStudent() {
+            let name=document.getElementById('reg-name').value, id=document.getElementById('reg-id').value, gr=document.getElementById('reg-grade').value, cls=document.getElementById('reg-cls').value;
+            if(!name||!id) return alert("Missing fields");
+            db.st.push({id,name,gr,cls}); localStorage.setItem('f_st',JSON.stringify(db.st));
+            showToast("Student Added"); renderSt();
+        }
+        function renderSt() { document.querySelector('#st-table tbody').innerHTML = db.st.map(s => `<tr><td>${s.id}</td><td>${s.name}</td><td>${s.gr}-${s.cls}</td><td><button class='btn-danger' style='padding:2px 8px;' onclick='delSt("${s.id}")'>Del</button></td></tr>`).join(''); }
+        function delSt(id) { db.st = db.st.filter(s => s.id !== id); localStorage.setItem('f_st',JSON.stringify(db.st)); renderSt(); }
+
+        // Teachers
+        function addTeacher() {
+            let name=document.getElementById('tr-name').value, id=document.getElementById('tr-id').value, sub=document.getElementById('tr-sub').value, ph=document.getElementById('tr-phone').value;
+            if(!name) return alert("Missing fields");
+            db.tr.push({id,name,sub,ph}); localStorage.setItem('f_tr',JSON.stringify(db.tr)); showToast("Teacher Added"); renderTr();
+        }
+        function renderTr() { document.querySelector('#tr-table tbody').innerHTML = db.tr.map(t => `<tr><td>${t.id}</td><td>${t.name}</td><td>${t.sub}</td><td>${t.ph}</td><td><button class='btn-danger' onclick='delTr("${t.id}")'>Del</button></td></tr>`).join(''); }
+        function delTr(id) { db.tr = db.tr.filter(t => t.id !== id); localStorage.setItem('f_tr',JSON.stringify(db.tr)); renderTr(); }
+
+        // Attendance (Mark)
+        function loadAttList() {
+            let gr=document.getElementById('att-grade').value, cls=document.getElementById('att-cls').value;
+            document.getElementById('att-date').valueAsDate = new Date();
+            let list = db.st.filter(s => s.gr == gr && s.cls == cls);
+            if(list.length === 0) return alert("No students found in this class");
+            
+            document.getElementById('att-sheet').classList.remove('hidden');
+            document.querySelector('#att-table-view tbody').innerHTML = list.map(s => `
+                <tr><td>${s.id}</td><td>${s.name}</td><td><label><input type="checkbox" class="att-chk" data-id="${s.id}" data-name="${s.name}" checked> Present</label></td></tr>
+            `).join('');
+        }
+        function saveAttendance() {
+            let date=document.getElementById('att-date').value, gr=document.getElementById('att-grade').value, cls=document.getElementById('att-cls').value;
+            let records = [];
+            document.querySelectorAll('.att-chk').forEach(c => records.push({id:c.dataset.id, name:c.dataset.name, status:c.checked?'Present':'Absent'}));
+            
+            // Remove existing record for same date/class if any
+            db.att = db.att.filter(r => !(r.date === date && r.class === `${gr}-${cls}`));
+            
+            db.att.push({date, class:`${gr}-${cls}`, records});
+            localStorage.setItem('f_att',JSON.stringify(db.att));
+            showToast("Attendance Saved");
+        }
+
+        // Attendance (View History)
+        function viewPastAttendance() {
+            let date = document.getElementById('view-att-date').value;
+            let gr = document.getElementById('view-att-grade').value;
+            let cls = document.getElementById('view-att-cls').value;
+            
+            if(!date) return alert("Please select a date");
+
+            let key = `${gr}-${cls}`;
+            let record = db.att.find(r => r.date === date && r.class === key);
+
+            let displayArea = document.getElementById('history-view');
+            displayArea.classList.remove('hidden');
+            document.getElementById('hist-title').innerText = `Report: ${date} | Class: ${key}`;
+
+            let tbody = document.querySelector('#hist-table tbody');
+            
+            if(!record) {
+                tbody.innerHTML = `<tr><td colspan="3" style="text-align:center; color:red;">No records found for this date.</td></tr>`;
+            } else {
+                tbody.innerHTML = record.records.map(r => `
+                    <tr>
+                        <td>${r.id}</td>
+                        <td>${r.name}</td>
+                        <td><span class="${r.status === 'Present' ? 'badge-present' : 'badge-absent'}">${r.status}</span></td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        // Marks
+        function loadMarksForm() {
+            let id = document.getElementById('mark-search-id').value, s = db.st.find(x => x.id == id);
+            if(s) { document.getElementById('marks-container').classList.remove('hidden'); document.getElementById('mark-st-name').innerText=s.name; 
+            let m=db.mk[id]||{}; for(let i=1;i<=9;i++) document.getElementById('m'+i).value=m['s'+i]||''; } else alert("Not Found");
+        }
+        function saveMarks() {
+            let id = document.getElementById('mark-search-id').value, obj={};
+            for(let i=1;i<=9;i++) obj['s'+i]=document.getElementById('m'+i).value;
+            db.mk[id]=obj; localStorage.setItem('f_mk',JSON.stringify(db.mk)); showToast("Marks Saved");
+        }
+
+        // Reports
+        function generateReport() {
+            let id = document.getElementById('rep-id').value, s = db.st.find(x => x.id == id), m = db.mk[id];
+            if(!s || !m) return alert("Data missing");
+            document.getElementById('print-view').classList.remove('hidden');
+            document.getElementById('r-name').innerText = s.name; document.getElementById('r-id').innerText = s.id;
+            const subs = ["Religion", "Sinhala", "English", "Maths", "Science", "History", "Bucket 1", "Bucket 2", "Bucket 3"];
+            document.getElementById('r-body').innerHTML = subs.map((sub,i) => {
+                let v = m['s'+(i+1)], g = v>=75?'A':v>=65?'B':v>=50?'C':v>=35?'S':'W';
+                return `<tr><td style="border:1px solid black; padding:5px;">${sub}</td><td style="border:1px solid black; padding:5px;">${v||0}</td><td style="border:1px solid black; padding:5px;">${g}</td></tr>`;
+            }).join('');
+        }
+
+        // Library & Discipline
+        function updLib() {
+            let id=document.getElementById('lib-st-id').value, book=document.getElementById('lib-book').value, act=document.getElementById('lib-act').value;
+            db.lib.push({id,book,act,date:new Date().toLocaleDateString()}); localStorage.setItem('f_lib',JSON.stringify(db.lib)); renderLib();
+        }
+        function renderLib() { document.querySelector('#lib-table tbody').innerHTML = db.lib.map(r => `<tr><td>${r.id}</td><td>${r.book}</td><td>${r.act}</td><td>${r.date}</td></tr>`).join(''); }
+        
+        function addDisc() {
+            let id=document.getElementById('disc-id').value, type=document.getElementById('disc-type').value, desc=document.getElementById('disc-desc').value;
+            db.disc.push({id,type,desc}); localStorage.setItem('f_disc',JSON.stringify(db.disc)); renderDisc();
+        }
+        function renderDisc() { document.querySelector('#disc-table tbody').innerHTML = db.disc.map(d => `<tr><td>${d.id}</td><td>${d.type}</td><td>${d.desc}</td></tr>`).join(''); }
+
+        // Dashboard & Init
+        function updateDash() {
+            document.getElementById('dash-st-count').innerText = db.st.length;
+            document.getElementById('dash-tr-count').innerText = db.tr.length;
+        }
+        function resetSystem() { if(confirm("Clear Data?")) { localStorage.clear(); location.reload(); } }
+        setInterval(() => { document.getElementById('clock').innerText = new Date().toLocaleTimeString(); }, 1000);
+        
+        renderSt(); renderTr(); renderLib(); renderDisc(); updateDash();
+    </script>
+</body>
+</html>
+    
+  </body>
+  
+</html>
